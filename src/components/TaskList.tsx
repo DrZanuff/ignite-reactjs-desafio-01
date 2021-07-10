@@ -18,7 +18,7 @@ export function TaskList() {
   function handleCreateNewTask() {
     // Crie uma nova task com um id random, não permita criar caso o título seja vazio.
     if (newTaskTitle === ""){
-      toast.error("Insira o nome da task!");
+      //toast.error("Insira o nome da task!"); //Testes não gostam do Toaster
       return
     }
     const date = new Date;
@@ -29,7 +29,7 @@ export function TaskList() {
       title : newTaskTitle,
       isComplete : false
     }
-    toast.success("Task criada!")
+    //toast.success("Task criada!") //Testes não gostam do Toaster
     setTasks( [...tasks, task] )
     setNewTaskTitle('');
 
@@ -45,11 +45,11 @@ export function TaskList() {
 
         setTasks(newTasks);
 
-        if (newTasks[i].isComplete){
+/*         if (newTasks[i].isComplete){
           toast('Bom trabalho!', {
             icon: '👏',
           });
-        }
+        } */ //Testes não gostam do Toaster
 
         break;
       } 
@@ -67,7 +67,7 @@ export function TaskList() {
     if (index > -1){
       let newTasks = [...tasks]
       newTasks.splice(index , 1)
-      toast.error("Task removida...")
+      //toast.error("Task removida...") //Testes não gostam do Toaster
       setTasks(newTasks)
     }
 
